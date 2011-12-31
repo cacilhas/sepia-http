@@ -1,0 +1,9 @@
+*.o
+*.lc
+*.bak
+*.swp
+*.swo
+*.kpf
+*~
+.DS_Store
+tmp
