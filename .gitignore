@@ -6,4 +6,6 @@
 *.kpf
 *~
 .DS_Store
+/.buildpath
+/.project
 tmp
