@@ -7,7 +7,7 @@ _NAME = "Sepia LuaPage"
 _PACKAGE = "sepia.luapage"
 
 
-local function lp_loadstring(s, request, response)
+function loadstring(s, request, response)
 	local aux = s:gsub("<%?lua%s(.-)%?>", "]===] %1 lp_response = lp_response .. [===[")
 	aux = aux:gsub("<%?lua=(.-)%?>", "]===] .. tostring(%1) .. [===[")
 
@@ -22,12 +22,9 @@ local function lp_loadstring(s, request, response)
 end
 
 
-loadstring = lp_loadstring
-
-
 function loadfile(f, request, response)
 	fd = io.input(f)
 	local s = fd:read "*a"
 	fd:close()
-	return lp_loadstring(s, request, response)
+	return loadstring(s, request, response)
 end
