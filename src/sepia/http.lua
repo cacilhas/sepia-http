@@ -783,7 +783,7 @@ function mediaroot(root)
 				xpcall(
 					function ()
 						response:write(
-							assert(sepia.luapage.loadfile(path, request, response))
+							sepia.luapage.loadfile(path, request, response)
 						)
 					end,
 					function (err) seterror(response, 500, http500, err) end
